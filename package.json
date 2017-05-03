@@ -1,0 +1,10 @@
+{
+  "name": "graphql-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Abdellah Alaoui <als.abdellah@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+  	"start": "nodemon ./server.js"
+  }
+}
