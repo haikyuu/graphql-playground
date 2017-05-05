@@ -3,8 +3,8 @@ const bodyParser =  require('body-parser')
 const { graphqlExpress, graphiqlExpress, } = require('graphql-server-express')
 const { makeExecutableSchema, } = require('graphql-tools')
 
-const schema = require('./schema')
-const resolvers = require('./resolvers')
+const schema = require('./data/schema')
+const resolvers = require('./data/resolvers')
 
 const PORT = 3000;
 
@@ -15,6 +15,8 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({
  schema: makeExecutableSchema({
  	typeDefs: schema,
   	resolvers: resolvers,
+  	allowUndefinedInResolve: false,
+  	printErrors: true,
  }),
 }));
 
